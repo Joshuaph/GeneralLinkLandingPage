@@ -8,18 +8,25 @@ class CardContainer extends Component {
     super();
 
     this.state = {
-      cards: []
+      cards: DATA
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      cards: DATA.map((item, index) => <Card key={index} item={item} />)
-    });
-  }
-
   render() {
-    return <div id={styles.cardContainer}>{this.state.cards}</div>;
+    const cardItems = () => {
+      var filtered = () => {
+        if (this.props.type === "Sportex") {
+          return this.state.cards.filter(item => item.category === "Generic");
+        } else {
+          return this.state.cards.filter(item => item.category !== "Generic");
+        }
+      };
+
+      return filtered().map((item, index) => <Card key={index} item={item} />);
+    };
+
+    console.log(cardItems());
+    return <div id={styles.cardContainer}>{cardItems()}</div>;
   }
 }
 

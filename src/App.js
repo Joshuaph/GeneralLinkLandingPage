@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar Module/Navbar";
 import "./App.scss";
 
 function App() {
-  const [type, setType] = useState("");
+  const [type, setType] = useState("Sportex");
 
   return (
     <main>

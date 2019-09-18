@@ -5,11 +5,13 @@ import styles from "./Navbar.module.scss";
 const ITEMS = [
   {
     title: "Sportex",
-    active: true
+    active: true,
+    id: 0
   },
   {
     title: "other",
-    active: false
+    active: false,
+    id: 1
   }
 ];
 
@@ -18,32 +20,37 @@ class Navbar extends Component {
     super();
 
     this.state = {
-      items: []
+      items: ITEMS
     };
 
     this.handleEvent = this.handleEvent.bind(this);
   }
 
   componentDidMount() {
-    this.setState({
-      items: ITEMS.map((item, index) => <NavbarItem key={index} data={item} handler={this.handleEvent} id={index} />)
-    });
-
-    for (let el of ITEMS) el.active === true && this.props.setType(el.title);
+    //for (var el of ITEMS) el.active === true && this.props.setType(el.title);
   }
 
-  handleEvent(indx) {
-    let newArr = this.state.items;
-    for (let el of newArr) {
-      if (el.props.id !== indx) el.props.data.active = false;
-    }
-    this.setState({ items: newArr });
+  //
+  handleEvent(id) {
+    this.setState(prevState => {
+      const updatedList = prevState.items.map(itm => {
+        if (itm.id === id && !itm.active) {
+          itm.active = true;
+          this.props.setType(itm.title);
+        } else if (itm.id !== id && itm.active) itm.active = false;
+        else;
+        return itm;
+      });
 
-    //alert("Sportex is:" + this.state.items[0].props.data.active + "N Other is:" + this.state.items[1].props.data.active);
+      return { items: updatedList };
+    });
   }
 
   render() {
-    return <div id={styles.Navbar}>{this.state.items}</div>;
+    //create array of navbaritems
+    const navItems = this.state.items.map(item => <NavbarItem key={item.id} data={item} handler={this.handleEvent} />);
+
+    return <div id={styles.Navbar}>{navItems}</div>;
   }
 }
 
