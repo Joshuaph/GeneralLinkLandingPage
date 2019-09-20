@@ -3,91 +3,103 @@ const DATA = [
     title: "HVFR Catalog",
     category: "Generic",
     resource: "http://online.fliphtml5.com/ptuo/rujx/",
-    displaytitle: "HVFR Catalog"
+    displaytitle: "HVFR Catalog",
+    img: "images/hivis-flame.png"
   },
   {
     title: "Superior Catalog",
     category: "Generic",
     resource: "http://fliphtml5.com/ptuo/qrcf/",
-    displaytitle: "Who We Are"
+    displaytitle: "Who We Are",
+    img: "images/superior.png"
   },
   {
     title: "Superior Fall/Winter 18",
     category: "Generic",
     resource: "http://online.fliphtml5.com/ptuo/tyll/",
-    displaytitle: "Fall/Winter Product Guide"
+    displaytitle: "Fall/Winter Product Guide",
+    img: "images/fall-winter2018.png"
   },
   {
     title: "Signs, Banners, Decals",
     category: "Generic",
     resource: "https://www.sportexsafety.com/links/files/Sportex_SignsBannersDecals-Catalog-2017.pdf",
-    displaytitle: "Signs, Banners, & Decals"
+    displaytitle: "Signs, Banners, & Decals",
+    img: "images/signs-banners.png"
   },
   {
     title: "Hi-Vis PPE & Safety Recognition",
     category: "Generic",
     resource: "http://fliphtml5.com/ptuo/masb",
-    displaytitle: "Hi-Vis PPE & Safety Recognition"
+    displaytitle: "Hi-Vis PPE & Safety Recognition",
+    img: "images/hivis-ppe.png"
   },
   {
     title: "BNSF",
     category: "BNSF",
-    img: "images/bnsf-logo.jpg",
+    img: "images/bnsf-workwear.png",
     resource: "https://www.sportexsafety.com/links/files/BNSF-workwear-guide-2019.pdf",
     displaytitle: "PPE/Workwear"
   },
   {
     title: "Watco",
     category: "Watco",
-    img: "images/watco-logo.jpg",
+    img: "images/watco.png",
     resource: "https://www.sportexsafety.com/links/files/watco16.pdf"
   },
   {
     title: "Corporate Awards",
     category: "Generic",
     resource: "https://www.sportexsafety.com/links/files/Sportex_Corporate-Awards.pdf",
-    displaytitle: "Corporate Awards"
+    displaytitle: "Corporate Awards",
+    img: "images/corporate-awards.png"
   },
   {
     title: "Star Awards",
     category: "Generic",
     resource: "https://www.sportexsafety.com/links/files/Sportex_Star-Awards.pdf",
-    displaytitle: "Star Awards"
+    displaytitle: "Star Awards",
+    img: "images/star-awards.png"
   },
   {
     title: "Golf Awards",
     category: "Generic",
     resource: "https://www.sportexsafety.com/links/files/Sportex_Golf-Awards.pdf",
-    displaytitle: "Golf Awards"
+    displaytitle: "Golf Awards",
+    img: "images/golf-awards.png"
   },
   {
     title: "Acrylic Awards",
     category: "Generic",
     resource: "https://www.sportexsafety.com/links/files/Sportex_Acrylic-Awards.pdf",
-    displaytitle: "Acrylic Awards"
+    displaytitle: "Acrylic Awards",
+    img: "images/acrylic-awards.png"
   },
   {
     title: "Crystal Awards",
     category: "Generic",
     resource: "https://www.sportexsafety.com/links/files/Sportex_Crystal-Awards.pdf",
-    displaytitle: "Crystal Awards"
+    displaytitle: "Crystal Awards",
+    img: "images/crystal-awards.png"
   },
   {
     title: "Plaques & Awards",
     category: "Generic",
     resource: "https://www.sportexsafety.com/links/files/Sportex_Plaques-Awards.pdf",
-    displaytitle: "Plaques & Awards"
+    displaytitle: "Plaques & Awards",
+    img: "images/barhill-plaques.png"
   },
   {
     title: "Award Components",
     category: "Generic",
     resource: "https://www.sportexsafety.com/links/files/Sportex_Award-Components.pdf",
-    displaytitle: "Award Components"
+    displaytitle: "Award Components",
+    img: "images/award-comp.png"
   },
   {
     title: "Ladies Of Kiewit V1",
     category: "Kiewit",
-    img: "images/kiewit-logo.jpg",
+    img: "images/kiewit-ladies.png",
     resource: "http://online.fliphtml5.com/ptuo/ulif/",
     displaytitle: "Ladies of Kiewit"
   },
@@ -95,7 +107,8 @@ const DATA = [
     title: "Preprint",
     category: "Generic",
     resource: "https://www.sportexsafety.com/links/files/Sportex-Preprint-Catalog-2019.pdf",
-    displaytitle: "Preprint Catalog"
+    displaytitle: "Preprint Catalog",
+    img: "images/pre-print.png"
   }
 ];
 

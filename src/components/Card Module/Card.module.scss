@@ -3,20 +3,25 @@
     margin-top: 10vh;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20em, 2fr));
+    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
     grid-gap: 1rem;
+    align-items: center;
 
     .card {
         display: flex;
-        justify-content: center;
-        flex-direction: column;
+        flex-direction: column-reverse;
         flex-wrap: wrap;
         padding: 1.5rem 1.5rem 0 1.5rem;
+        height: 38vh;
         background-color: white;
         border-radius: .3rem;
         box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.20);
         cursor: pointer;
         z-index: 1;
+
+        background-repeat: no-repeat;
+        background-position-x: 0px;
+        background-size: 100% 100%;
 
         img {
             margin: 1rem;
@@ -35,7 +40,28 @@
         }
 
         .vBtn {
+            justify-self: flex-end;
+            position: relative;
+            bottom: 0;
             width: 6rem;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: -1.5rem -1.5rem 0 -1.5rem;
+            height: 15%;
+            width: auto;
+            background-color: rgb(37, 37, 37);
+            bottom: 0;
+            border-bottom-left-radius: .3rem;
+            border-bottom-right-radius: .3rem;
+
+            h3 {
+                color: white;
+                font-size-adjust: 0.8;
+            }
         }
     }
 }
