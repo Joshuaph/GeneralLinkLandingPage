@@ -1,57 +1,53 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import NavbarItem from "./NavbarItem";
 import styles from "./Navbar.module.scss";
 
 const ITEMS = [
-  {
-    title: "Sportex",
-    active: true,
-    id: 0
-  },
-  {
-    title: "other",
-    active: false,
-    id: 1
-  }
+    {
+        title: "All",
+        active: true,
+        id: 0
+    },
+    {
+        title: "Sportex",
+        active: false,
+        id: 1
+    },
+    {
+        title: "other",
+        active: false,
+        id: 2
+    }
 ];
 
-class Navbar extends Component {
-  constructor() {
-    super();
+function Navbar(props) {
+    let items = ITEMS;
+    let navItems = [];
 
-    this.state = {
-      items: ITEMS
-    };
+    function handleEvent(id) {
+        items.map(item => {
+            if (item.id === id) {
+                if (!item.active) item.active = true;
+            } else item.active = false;
 
-    this.handleEvent = this.handleEvent.bind(this);
-  }
+            return item;
+        });
 
-  componentDidMount() {
-    //for (var el of ITEMS) el.active === true && this.props.setType(el.title);
-  }
+        mapItems();
+    }
 
-  //
-  handleEvent(id) {
-    this.setState(prevState => {
-      const updatedList = prevState.items.map(itm => {
-        if (itm.id === id && !itm.active) {
-          itm.active = true;
-          this.props.setType(itm.title);
-        } else if (itm.id !== id && itm.active) itm.active = false;
-        else;
-        return itm;
-      });
+    function mapItems() {
+        navItems = items.map(item => <NavbarItem key={item.id} data={item} handler={handleEvent} />);
+    }
 
-      return { items: updatedList };
-    });
-  }
-
-  render() {
-    //create array of navbaritems
-    const navItems = this.state.items.map(item => <NavbarItem key={item.id} data={item} handler={this.handleEvent} />);
-
-    return <div id={styles.Navbar}>{navItems}</div>;
-  }
+    mapItems();
+    console.log("I ran here");
+    return (
+        <div id={styles.Navbar}>
+            {navItems}
+            {console.log("I rendered")}
+        </div>
+    );
 }
 
 export default Navbar;

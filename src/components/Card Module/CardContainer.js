@@ -1,33 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import Card from "./Card";
 import DATA from "../../data";
 import styles from "./Card.module.scss";
 
-class CardContainer extends Component {
-  constructor() {
-    super();
+function CardContainer(match) {
+    let cards = DATA;
+    let type = match.match.params.id;
 
-    this.state = {
-      cards: DATA
-    };
-  }
-
-  render() {
     const cardItems = () => {
-      var filtered = () => {
-        if (this.props.type === "Sportex") {
-          return this.state.cards.filter(item => item.category === "Generic");
-        } else {
-          return this.state.cards.filter(item => item.category !== "Generic");
-        }
-      };
-
-      return filtered().map((item, index) => <Card key={index} item={item} />);
+        var filtered = () => {
+            if (type) {
+                return cards.filter(item => item.tags.includes(type));
+            } else return cards;
+        };
+        return filtered().map((item, index) => <Card key={index} item={item} />);
     };
 
-    console.log(cardItems());
+    console.log(type);
     return <div id={styles.cardContainer}>{cardItems()}</div>;
-  }
 }
 
 export default CardContainer;
